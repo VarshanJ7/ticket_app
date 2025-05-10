@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/screens/home_screen.dart';
+import 'package:ticket_app/screens/search.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -14,8 +15,8 @@ class _BottomNavBarState extends State<BottomNavBar > {
 final appScreens =[
 
 HomeScreen(),
-Center(child: const Text("Search")),
-Center(child: const Text("Ticket")),
+ SearchScreen(), 
+Center(child: const Text("Tickets")),
 
 Center(child: const Text("Profile"))
 
@@ -46,7 +47,7 @@ void _onItemTappped(int index) {
           selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.grey,
           showSelectedLabels: false,
-        
+         
         items:  [  
 BottomNavigationBarItem(icon: Icon(FluentSystemIcons.ic_fluent_home_add_regular),
 

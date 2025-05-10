@@ -3,10 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/res/styles/media.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
+import 'package:ticket_app/base/widgets/hotels.dart';
+import 'package:ticket_app/base/widgets/ticket_view.dart';
 
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
+  final List<Map<String, dynamic>> ticketList = [
+    {"id": 1, "destination": "New York", "price": 250},
+    {"id": 2, "destination": "London", "price": 300},
+    {"id": 3, "destination": "Tokyo", "price": 400},
+  ];
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +62,7 @@ image: DecorationImage(image: AssetImage(AppMedia.logo))
 
 
 ),
-
+ 
 
                     ),
                   ],
@@ -80,9 +90,33 @@ borderRadius: BorderRadius.circular(10),color:Color(0xFFF4F6FD),
             ),  
           ),
         const SizedBox(height: 40),
-        AppDoubleText(bigText: "Upcoming Flights", smallText: "View all"),
+        AppDoubleText(bigText: "Upcoming Flights", smallText: "View all "),
+const SizedBox(height: 20),
+        Center(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
 
+                children: ticketList.map((singleticket) => TicketView()).toList(),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+             AppDoubleText(bigText: "Hotels", smallText: "View all "),
+             SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+               children: [
+                 Container(
+                  margin: const EdgeInsets.only(right: 20),
+                  child: Hotels()),
+                  Hotels(),
+               ],
+             )),
         ],
+ 
+
+        
       ),
     );
   }

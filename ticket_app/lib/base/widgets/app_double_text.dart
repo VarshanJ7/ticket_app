@@ -13,7 +13,16 @@ AppDoubleText({super.key,required this.bigText, required this.smallText});
       children: [
 Text(bigText, style: AppStyles.headLineStyle3),
  InkWell(
-  onTap: () {} 
+  onTap: () {
+
+//Navigator.push(context, MaterialPageroute)(context
+  //builder: (context) => const Text("You are in the next screen")
+  //);
+
+// for if tekan that button will bring to another page exampls view all button 
+
+
+  } 
 
   , child:Text (smallText, style: AppStyles.headLineStyle3) 
   ) 
